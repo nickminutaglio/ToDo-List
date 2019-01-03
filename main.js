@@ -1,33 +1,34 @@
-const list = [];
 const listInput = document.getElementById("userinput");
 const listDisplay = document.getElementById("listBox");
 
-//adds input to the array, invokes buttonCreate
+//if user hits Enter, adds input to list
+document.getElementById("userinput").onkeydown = function(ev){
+  if(ev.keyCode == 13){
+    event.preventDefault();
+    addToList();
+  }
+};
+
+//adds the user input into the list
 function addToList() {
-  list.push(listInput.value);
-  clearAndDisplay(); 
-  createButton();
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("userinput").value;
+  var text = document.createTextNode(inputValue);
+  li.appendChild(text);
+  document.getElementById("listBox").appendChild(li);
+  clearDisplay(); 
 }
 
-function createButton(){
-
-  let checkBox = document.createElement("button");
-  var checkBoxDiv = document.getElementById("listBox");
-  checkBoxDiv.appendChild(checkBox);
-}
-
-function clearAndDisplay(){
-  //clears box
+//clears box after input
+function clearDisplay(){
   listInput.value = "";
-  //clears listBox and adds everything inputted so far
-  listDisplay.innerHTML = "";
-  listDisplay.innerHTML += list.join("<br>");
-  console.log(list);
 }
 
-function clearList(){
-    list.length = 0;
-    listDisplay.innerHTML = "";
-}
+//turns item green and adds checkmark when clicked
+var list = document.querySelector('ul');
+list.addEventListener('click', function(event) {
+    event.target.classList.toggle('checked');
+});
+
 
 
