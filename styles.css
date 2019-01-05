@@ -1,7 +1,53 @@
+
+#container{
+    display: flex;
+    size: 100px;
+    margin: 0 auto;
+}
+
+#form-container{
+    margin: 0 auto;
+}
+
+#userinput{
+    width: 400px;
+    height: 50px;
+    font-size: 2.5em;
+}
+
+input{
+    border-radius: 10px;
+    border-color: grey;
+    border-style: solid;
+}
+.close {
+    color: grey;
+    user-select: none;
+  }
+
+span{
+    height: 43px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span:hover{
+    background-color: darkgrey;
+}
+
 ul{
     list-style-type: none;
     color: red;
     padding: 0px;
+    user-select: none;
+    font-size: 2em;
+}
+
+ul:hover{
+    cursor: pointer;
+    background-color: darkgrey;
 }
 
 ul li.checked{  
@@ -12,5 +58,19 @@ ul li.checked::before{
     content: "✓";
     text-decoration: "underline";  
 }
+
+li{
+    background-color: rgba(180, 180, 180, 0.219);
+    border-style: solid;
+    border-radius: none;
+    border-color: black;
+}
+
+li :hover{
+    
+}
+
+
+  
 
 
